@@ -1,7 +1,7 @@
 import cv2
 import os
 
-import SeguimientoManos as sm
+import HandsDetector as sm
 
 folder_name = 'A'
 path = ''

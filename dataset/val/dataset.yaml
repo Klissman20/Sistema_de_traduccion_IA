@@ -1,0 +1,4 @@
+train: C:\Users\Esteban\Desktop\yolo_model_train\val\YOLODataset/images/train/
+val: C:\Users\Esteban\Desktop\yolo_model_train\val\YOLODataset/images/val/
+nc: 20
+names: ["a", "b", "c", "d", "e", "f", "h", "i", "k", "l", "M", "N", "O", "P", "Q", "R", "T", "U", "V", "W"]

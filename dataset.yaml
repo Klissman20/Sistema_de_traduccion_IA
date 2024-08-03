@@ -1,0 +1,4 @@
+train: C:\Users\Esteban\Desktop\POSGRADO INTELIGENCIA ARTIFICIAL\Proyecto de grado Posgrado Inteligencia Artificial\Sistema_de_traduccion_IA\dataset\train/
+val: C:\Users\Esteban\Desktop\POSGRADO INTELIGENCIA ARTIFICIAL\Proyecto de grado Posgrado Inteligencia Artificial\Sistema_de_traduccion_IA\dataset\val
+nc: 20
+names: ["a", "b", "c", "d", "e", "f", "h", "i", "k", "l", "M", "N", "O", "P", "Q", "R", "T", "U", "V", "W"]
