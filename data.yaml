@@ -1,0 +1,5 @@
+train: C:\Users\Esteban\Desktop\POSGRADO INTELIGENCIA ARTIFICIAL\Proyecto de grado Posgrado Inteligencia Artificial\Sistema_de_traduccion_IA\LSC\train
+val: C:\Users\Esteban\Desktop\POSGRADO INTELIGENCIA ARTIFICIAL\Proyecto de grado Posgrado Inteligencia Artificial\Sistema_de_traduccion_IA\LSC\valid
+
+nc: 26
+names: ['A', 'B', 'C', 'D', 'E', 'F', 'G', 'H', 'I', 'J', 'K', 'L', 'M', 'N', 'O', 'P', 'Q', 'R', 'S', 'T', 'U', 'V', 'W', 'X', 'Y', 'Z']

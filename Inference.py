@@ -15,6 +15,10 @@ model = YOLO('best.pt')
 while True:
     ret, frame = cap.read()
 
+    if not ret:
+        print("Error: Could not read frame or end of video.")
+        break
+
     frame = hand_detector.find_hands(frame, draw=False)
 
     list1, bbox, hand = hand_detector.find_position(frame, hand_number=0, draw=False, color=[0, 255, 0])
@@ -22,26 +26,28 @@ while True:
     if hand == 1:
         x_min, y_min, x_max, y_max = bbox
 
-        x_min = x_min - 60
-        x_max = x_max + 60
-        y_min = y_min - 60
-        y_max = y_max + 60
+        x_min = max(0, x_min - 80)
+        x_max = min(frame.shape[1], x_max + 80)
+        y_min = max(0, y_min - 80)
+        y_max = min(frame.shape[0], y_max + 80)
 
-        cuted_image = frame[y_min:y_max, x_min:x_max]
+        cut_image = frame[y_min:y_max, x_min:x_max]
 
-        cuted_image = cv2.resize(cuted_image, (640, 640), interpolation=cv2.INTER_CUBIC)
+        if cut_image.size > 0:
 
-        result = model.predict(cuted_image, conf=0.55)
+            cut_image = cv2.resize(cut_image, (640, 640), interpolation=cv2.INTER_CUBIC)
 
-        if len(result) != 0:
+            result = model.predict(cut_image, conf=0.5)
 
-            for res in result:
-                masks = res.masks
-                coords = masks
+            if len(result) > 0:
 
-                annotations = result[0].plot()
+                for res in result:
+                    masks = res.masks
+                    coords = masks
 
-        cv2.imshow('Predict', annotations)
+                    annotations = result[0].plot()
+
+                    cv2.imshow('Predict', annotations)
 
     cv2.imshow('Global', frame)
 
